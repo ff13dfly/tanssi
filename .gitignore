@@ -10,3 +10,5 @@
 
 # Spec/Wasm build directory
 /build/
+
+raw.zip
