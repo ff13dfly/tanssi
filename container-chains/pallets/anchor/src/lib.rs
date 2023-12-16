@@ -6,7 +6,7 @@ pub use pallet::*;
 pub mod pallet {
 
     use super::*;
-    use frame_support::pallet_prelude::{*, ValueQuery, OptionQuery};
+    use frame_support::pallet_prelude::{*};
     use frame_system::pallet_prelude::*;
     use scale_info::prelude::vec::Vec;
 
@@ -19,8 +19,8 @@ pub mod pallet {
         PalletId,
     };
 
-    type BalanceOf<T> = 
-        <<T as Config>::Currency as Currency<<T as frame_system::Config>::AccountId>>::Balance;
+    // type BalanceOf<T> = 
+    //     <<T as Config>::Currency as Currency<<T as frame_system::Config>::AccountId>>::Balance;
 
     #[pallet::pallet]
     pub struct Pallet<T>(_);
@@ -99,8 +99,8 @@ pub mod pallet {
     #[pallet::event]
 	#[pallet::generate_deposit(pub(super) fn deposit_event)]
 	pub enum Event<T: Config> {
-		/// An anchor is set to selling status.
-		AnchorToSell(T::AccountId,u32,T::AccountId),	//(owner, price , target)
+		//An anchor is set to selling status.
+		//AnchorToSell(T::AccountId,u32,T::AccountId),	//(owner, price , target)
 	}
 
     // Errors inform users that something went wrong

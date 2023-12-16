@@ -697,6 +697,8 @@ construct_runtime!(
 
         RootTesting: pallet_root_testing = 100,
 
+        //Anchor pallet
+        Anchor: set_anchor=110,
     }
 );
 
@@ -945,3 +947,22 @@ cumulus_pallet_parachain_system::register_validate_block! {
     BlockExecutor = pallet_author_inherent::BlockExecutor::<Runtime, Executive>
     CheckInherents = CheckInherents,
 }
+
+parameter_types! {
+    pub const PalletId: PalletId = PalletId(*b"anchor666");
+}
+
+// Add configuration for anchor module
+impl pallet_anchor::Config for Runtime {
+    type RuntimeEvent = RuntimeEvent;
+    type Currency = Balances;
+    type TicketCost = ConstU128<1000000000000000>;
+    type PalletId = PalletId;
+}
+
+// construct_runtime!(
+//     pub struct Runtime {
+//         // Include the custom logic from the pallet-anchor in the runtime.
+//         setAnchor: set_anchor,
+//     }
+// )
