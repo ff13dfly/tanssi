@@ -1,5 +1,5 @@
 [package]
-name = "anchor"
+name = "pallet-anchor"
 version = "4.0.0-dev"
 description = "Anchor for Tanssi"
 authors = ["Fuu"]

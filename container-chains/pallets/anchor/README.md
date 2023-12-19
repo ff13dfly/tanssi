@@ -22,20 +22,15 @@
 
 - Then you can build the appchain successful with `cargo build`.
 
-## Deployment
-
-- Get the JSON file.
-
-```SHELL
-    ./tanssi-node build-spec --disable-default-bootnode --chain local > anchor.json
-```
-
-## Result
-
-- The JSON file can be deployed on Tanssi is "anchor.v1.0.0.json".
-
 ## WASM Operation
 
 ```SHELL
+    # Tanssi suggestion
     cargo build -p container-chain-template-frontier-node --release
+
+    # this command failed
+    cargo build -p container-chain-template-simple-node --release
+
+    # full build
+    cargo build --release
 ```
